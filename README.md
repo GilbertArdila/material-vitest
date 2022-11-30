@@ -1,10 +1,11 @@
 # Material ui project
 - vite
 - vitest
-- npm install @mui/material @emotion/react @emotion/styled
-- npm install vitest
-- npm install jsdom
-- npm install --save-dev @testing-library/react
+- @mui/material @emotion/react @emotion/styled
+- vitest
+- jsdom
+- --save-dev @testing-library/react
+- --save-dev @testing-library/jest-dom
 ## en vite.config 
 -  test: {
     environment: 'jsdom',
