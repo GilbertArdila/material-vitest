@@ -6,6 +6,7 @@
 - jsdom
 - --save-dev @testing-library/react
 - --save-dev @testing-library/jest-dom
+- @mui/icons-material
 ## en vite.config 
 -  test: {
     environment: 'jsdom',
