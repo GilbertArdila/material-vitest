@@ -6,8 +6,13 @@ const Searcher = ({setUserSearched}) => {
   const [inputSearch, setInputSearch] = useState('');
 
   const handleSubmit = () => {
-    setUserSearched(inputSearch)
+    if(inputSearch===''){
+      alert('Ingresa un usuario para poder continuar')
+    }else{
+       setUserSearched(inputSearch)
     setInputSearch('')
+    }
+   
   }
   return (
     <Stack 
@@ -15,6 +20,7 @@ const Searcher = ({setUserSearched}) => {
     direction='row' 
     sx={{
         marginTop:'30px',
+        marginBottom:'30px',
         width:'80%'
     }}>
         <TextField 
