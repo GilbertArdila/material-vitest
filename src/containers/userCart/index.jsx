@@ -1,11 +1,12 @@
 import { CardMedia, Grid } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { PrincipalInformation } from '../principalInformation';
 import { Description } from '../description';
 import { Stack } from '@mui/system';
 
 const UserCart = ({ userState }) => {
   const { avatar_url } = userState;
+
   return (
     <Grid 
     container 

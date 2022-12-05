@@ -1,13 +1,14 @@
-import { useState,useEffect } from 'react';
+import { useState,useEffect} from 'react';
 import { Searcher } from './components/Search';
-import {Container} from '@mui/material';
-import { getGitHubUser } from './services/users';
+import {Container, Typography} from '@mui/material';
 import {UserCart} from './containers/userCart';
+import {getGitHubUser} from './services/users';
 
 function App() {
   const [userSearched, setUserSearched] = useState('octocat');
   const [userState, setUserState] = useState(userSearched);
   const [notFound, setNotFound] = useState(false);
+ 
 
 
 
@@ -26,8 +27,11 @@ function App() {
     //if user typed exist
    }else{
     setUserState(response);
+
     //if we want to show the last typed user in case actual typed user does not exist
     //localStorage.setItem('octocat',response)
+
+    
     
    }
   
@@ -40,6 +44,9 @@ function App() {
  }, [userSearched]);
 
   return (
+    
+
+   
     <Container  sx={{
       background:'whiteSmoke',
       width:'80vw',
@@ -51,12 +58,10 @@ function App() {
       alignItems:'center'
     }} title={'container'}>
      <Searcher  setUserSearched={setUserSearched}/>
+     {notFound ? <Typography variant='h4'>El repositorio que estas buscando no existe, pero te trajimos el buen Octocat</Typography>:null}
      <UserCart userState={userState}/>
-    
-   
-     
-     
     </Container>
+    
   )
 }
 
