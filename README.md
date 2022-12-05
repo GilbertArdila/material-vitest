@@ -13,3 +13,4 @@
     environment: 'jsdom',
     globals: true
   }
+* solo se agregan test de dos componentes a manera de prueba
