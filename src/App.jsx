@@ -27,7 +27,7 @@ function App() {
     //if user typed exist
    }else{
     setUserState(response);
-
+    setNotFound(false);
     //if we want to show the last typed user in case actual typed user does not exist
     //localStorage.setItem('octocat',response)
 

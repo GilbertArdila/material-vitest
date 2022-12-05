@@ -1,20 +1,24 @@
 import React,{useState} from 'react';
-import { Stack,IconButton,TextField} from '@mui/material';
+import { Stack,IconButton,TextField, Alert} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Searcher = ({setUserSearched}) => {
   const [inputSearch, setInputSearch] = useState('');
+  const [isEmpty, setIsEmpty] = useState(false)
 
   const handleSubmit = () => {
     if(inputSearch===''){
-      alert('Ingresa un usuario para poder continuar')
+      setIsEmpty(true);
+      
     }else{
        setUserSearched(inputSearch)
-    setInputSearch('')
+       setInputSearch('');
+       setIsEmpty(false);
     }
    
   }
   return (
+    <>
     <Stack 
     title={'stack'} 
     direction='row' 
@@ -42,6 +46,8 @@ const Searcher = ({setUserSearched}) => {
             <SearchIcon />
         </IconButton>
     </Stack>
+    {isEmpty ? <Alert severity='warning'>Ingresa un usuario para poder continuar</Alert>: null}
+    </>
   )
 }
 
